@@ -13,7 +13,7 @@ X = data[:, 0]
 y = data[:, 1]
 m = y.size
 
-plt.ion()
+plt.ion() # 打开交互模式
 plt.figure(0)
 plot_data(X, y)
 
@@ -22,7 +22,7 @@ input('Program paused. Press ENTER to continue')
 # ===================== Part 2: Gradient descent =====================
 print('Running Gradient Descent...')
 
-X = np.c_[np.ones(m), X]  # Add a column of ones to X
+X = np.c_[np.ones(m), X]  # Add a column of ones to X  -- np.c_是按列连接两个矩阵 np_r是按行连接两个矩阵
 theta = np.zeros(2)  # initialize fitting parameters
 
 # Some gradient descent settings
@@ -34,13 +34,13 @@ print('Initial cost : ' + str(compute_cost(X, y, theta)) + ' (This value should 
 
 theta, J_history = gradient_descent(X, y, theta, alpha, iterations)
 
+print('print theta', theta)
 print('Theta found by gradient descent: ' + str(theta.reshape(2)))
 
 # Plot the linear fit
 plt.figure(0)
 line1, = plt.plot(X[:, 1], np.dot(X, theta), label='Linear Regression')
 plt.legend(handles=[line1])
-
 input('Program paused. Press ENTER to continue')
 
 # Predict values for population sizes of 35,000 and 70,000
@@ -54,7 +54,7 @@ input('Program paused. Press ENTER to continue')
 # ===================== Part 3: Visualizing J(theta0, theta1) =====================
 print('Visualizing J(theta0, theta1) ...')
 
-theta0_vals = np.linspace(-10, 10, 100)
+theta0_vals = np.linspace(-10, 10, 100) # numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None) 产生从start到stop的等差数列，num为元素个数，默认50个
 theta1_vals = np.linspace(-1, 4, 100)
 
 xs, ys = np.meshgrid(theta0_vals, theta1_vals)

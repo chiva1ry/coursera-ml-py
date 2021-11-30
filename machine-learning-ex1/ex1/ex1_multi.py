@@ -50,7 +50,7 @@ X = np.c_[np.ones(m), X]  # Add a column of ones to X
 print('Running gradient descent ...')
 
 # Choose some alpha value
-alpha = 0.03
+alpha = 0.04
 num_iters = 400
 
 # Init theta and Run Gradient Descent
