@@ -81,7 +81,7 @@ input('Program paused. Press ENTER to continue')
 initial_theta = np.zeros(X.shape[1])
 
 # Set regularization parameter lambda to 1 (you should vary this)
-lmd = 1
+lmd = 1.3
 
 # Optimize
 def cost_func(t):

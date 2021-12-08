@@ -13,6 +13,7 @@ plt.ion()
 data = np.loadtxt('ex2data1.txt', delimiter=',')
 X = data[:, 0:2]
 y = data[:, 2]
+print(X,y)
 
 # ===================== Part 1: Plotting =====================
 print('Plotting Data with + indicating (y = 1) examples and o indicating (y = 0) examples.')
